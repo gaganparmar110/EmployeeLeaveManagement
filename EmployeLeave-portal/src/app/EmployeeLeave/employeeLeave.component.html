@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+        <div class="card">
+            <div class="col-lg-12">
+                <form [formGroup]="leaveFormGroup">
+            <label>EmployeeName:</label>
+            <input type="text" formControlName="employeeName"/><br>
+            <label>LeaveFrom:</label>
+            <input type="date"formControlName="leaveStartDate"/><br>
+            <label>LeaveTo:</label>
+            <input type="date"formControlName="leaveEndDate"/><br>
+
+            <button (click)="applyLeave()">Apply</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

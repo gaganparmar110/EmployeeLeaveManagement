@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-card">
+          <div class="card">
+            <div class="row-form">
+              <h1>Employe Details</h1>
+              <form [formGroup]="employeFormGroup">
+              <label for="employeName">EnterEmployeName:</label>
+              <input type="text" formControlName="employeName"><br>
+              <span class="text-danger" *ngIf="(registerFormControl.employeName.touched || submitted) && registerFormControl.employeName.errors?.required">
+                Name is required!!
+            </span><br>
+              <button (click)="addEmployee()">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
