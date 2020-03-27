@@ -9,6 +9,8 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import{FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { LeaveListComponent } from './LeaveList/leave-list/leave-list.component';
 import {EmployeeService} from './EmployeeAdd/Employee.Service';
+import { EmployeeLeaveService } from './EmployeeLeave/EmployeeLeave.Service';
+import {LeaveListService} from './LeaveList/LeaveList.Service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import {EmployeeService} from './EmployeeAdd/Employee.Service';
     BrowserModule,
     AppRoutingModule,APP_ROUTING,  HttpClientModule ,FormsModule,ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,EmployeeLeaveService,LeaveListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

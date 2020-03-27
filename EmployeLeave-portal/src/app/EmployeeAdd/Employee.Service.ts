@@ -15,11 +15,11 @@ export class EmployeeService {
   postEmployeDetail() {
     return this.http.post(this.rootURL + '/Employees', this.formData);
   }
-  putPaymentDetail() {
-   // return this.http.put(this.rootURL + '/PaymentDetail/'+ this.formData.PMId, this.formData);
+  putEmployeeDetail() {
+   // return this.http.put(this.rootURL + '/EmployeeDetail/'+ this.formData.PMId, this.formData);
   }
-  deletePaymentDetail(id) {
-    //return this.http.delete(this.rootURL + '/PaymentDetail/'+ id);
+  deleteEmployeeDetail(id) {
+    //return this.http.delete(this.rootURL + '/EmployeeDetail/'+ id);
   }
 
   refreshList(){

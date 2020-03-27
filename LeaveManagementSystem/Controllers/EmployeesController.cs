@@ -20,14 +20,14 @@ namespace LeaveManagementSystem.Controllers
             _context = context;
         }
 
-        // GET: api/Employees
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employees>>> GetEmployees()
         {
             return await _context.Employees.ToListAsync();
         }
 
-        // GET: api/Employees/5
+      
         [HttpGet("{id}")]
         public async Task<ActionResult<Employees>> GetEmployees(int id)
         {
@@ -41,9 +41,7 @@ namespace LeaveManagementSystem.Controllers
             return employees;
         }
 
-        // PUT: api/Employees/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployees(int id, Employees employees)
         {
@@ -73,9 +71,7 @@ namespace LeaveManagementSystem.Controllers
             return NoContent();
         }
 
-        // POST: api/Employees
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+       
         [HttpPost]
         public async Task<ActionResult<Employees>> PostEmployees(Employees employees)
         {
@@ -85,7 +81,7 @@ namespace LeaveManagementSystem.Controllers
             return CreatedAtAction("GetEmployees", new { id = employees.EmployeId }, employees);
         }
 
-        // DELETE: api/Employees/5
+   
         [HttpDelete("{id}")]
         public async Task<ActionResult<Employees>> DeleteEmployees(int id)
         {

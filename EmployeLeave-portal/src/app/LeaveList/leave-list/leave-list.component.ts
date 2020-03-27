@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { LeaveListService } from '../LeaveList.Service';
+import { EmployeeLeaveService } from '../../EmployeeLeave/EmployeeLeave.Service';
 @Component({
   selector: 'app-leave-list',
   templateUrl: './leave-list.component.html',
   styleUrls: ['./leave-list.component.css']
 })
 export class LeaveListComponent implements OnInit {
-leaves:string [];
-  constructor(private httpService: HttpClient) { }
+
+  constructor(private httpService: HttpClient,private service:EmployeeLeaveService) { }
 
   ngOnInit(): void {
-    this.httpService.get('http://localhost:52202/api/employeeleaves').subscribe(  
-      data => {  
-       this.leaves = data as string [];  
-      }  
-    );  
+  this.service.refreshList();
   }
+ 
 
 }

@@ -20,14 +20,14 @@ namespace LeaveManagementSystem.Controllers
             _context = context;
         }
 
-        // GET: api/vLeaves
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<vLeaves>>> GetvLeaves()
         {
             return await _context.vLeaves.ToListAsync();
         }
 
-        // GET: api/vLeaves/5
+       
         [HttpGet("{id}")]
         public async Task<ActionResult<vLeaves>> GetvLeaves(int id)
         {
@@ -41,9 +41,7 @@ namespace LeaveManagementSystem.Controllers
             return vLeaves;
         }
 
-        // PUT: api/vLeaves/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+      
         [HttpPut("{id}")]
         public async Task<IActionResult> PutvLeaves(int id, vLeaves vLeaves)
         {
@@ -73,9 +71,6 @@ namespace LeaveManagementSystem.Controllers
             return NoContent();
         }
 
-        // POST: api/vLeaves
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
         public async Task<ActionResult<vLeaves>> PostvLeaves(vLeaves vLeaves)
         {
@@ -85,7 +80,7 @@ namespace LeaveManagementSystem.Controllers
             return CreatedAtAction("GetvLeaves", new { id = vLeaves.EmployeeLeaveId }, vLeaves);
         }
 
-        // DELETE: api/vLeaves/5
+      
         [HttpDelete("{id}")]
         public async Task<ActionResult<vLeaves>> DeletevLeaves(int id)
         {

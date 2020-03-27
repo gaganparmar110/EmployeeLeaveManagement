@@ -20,14 +20,13 @@ namespace LeaveManagementSystem.Controllers
             _context = context;
         }
 
-        // GET: api/EmployeeLeaves
+     
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeLeaves>>> GetEmployeeLeaves()
         {
             return await _context.EmployeeLeaves.ToListAsync();
         }
 
-        // GET: api/EmployeeLeaves/5
         [HttpGet("{id}")]
         public async Task<ActionResult<EmployeeLeaves>> GetEmployeeLeaves(int id)
         {
@@ -41,9 +40,7 @@ namespace LeaveManagementSystem.Controllers
             return employeeLeaves;
         }
 
-        // PUT: api/EmployeeLeaves/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployeeLeaves(int id, EmployeeLeaves employeeLeaves)
         {
@@ -73,14 +70,12 @@ namespace LeaveManagementSystem.Controllers
             return NoContent();
         }
 
-        // POST: api/EmployeeLeaves
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+       
         [HttpPost]
         public async Task<ActionResult<EmployeeLeaves>> PostEmployeeLeaves(EmployeeLeaves employeeLeaves)
         {
-           // var employeeName = employeeLeaves.;
-            // var check = await SingleOrDefault(t => t.EmployeeName == employeeLeaves.EmployeeName);
+           
+            
             var startdate = employeeLeaves.LeaveStartDate;
             var currentdate = DateTime.Now;
             var result = startdate - currentdate;
@@ -95,7 +90,7 @@ namespace LeaveManagementSystem.Controllers
             return CreatedAtAction("GetEmployeeLeaves", new { id = employeeLeaves.EmployeeLeaveId }, employeeLeaves);
         }
 
-        // DELETE: api/EmployeeLeaves/5
+       
         [HttpDelete("{id}")]
         public async Task<ActionResult<EmployeeLeaves>> DeleteEmployeeLeaves(int id)
         {
