@@ -11,7 +11,7 @@ namespace LeaveManagementSystem.Models
         [Key]
         public int EmployeId { get; set; }
 
-        
+       
         public string EmployeName { get; set; }
     }
 }

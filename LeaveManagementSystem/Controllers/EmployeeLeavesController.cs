@@ -74,8 +74,13 @@ namespace LeaveManagementSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<EmployeeLeaves>> PostEmployeeLeaves(EmployeeLeaves employeeLeaves)
         {
-           
+          //  var db = new EmployeeContext();
+            var name=employeeLeaves.EmployeName;
             
+            var check=  _context.Employees.SingleOrDefault(t => t.EmployeName == employeeLeaves.EmployeName);
+            
+            var id = check.EmployeId;
+            employeeLeaves.EmployeId = id;
             var startdate = employeeLeaves.LeaveStartDate;
             var currentdate = DateTime.Now;
             var result = startdate - currentdate;

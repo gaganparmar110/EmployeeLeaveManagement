@@ -10,7 +10,7 @@ import { EmployeeService } from './Employee.Service';
 })
 export class EmployeeAddComponent implements OnInit {
     employeFormGroup:FormGroup;
-    employeee=[];
+    employee=[];
     submitted = false;
   constructor(private httpService: HttpClient,private formBuilder:FormBuilder,private service:EmployeeService) { }
 
@@ -24,37 +24,27 @@ export class EmployeeAddComponent implements OnInit {
    
   }
   resetForm(employeFormGroup?:FormGroup){
-      
+      // if(employeFormGroup != null)
+      // employeFormGroup.reset();
+
       this.service.formData={
           EmployeId:0,
           EmployeName:''
       }
+      console.log(this.service.formData);
   }
   get registerFormControl() {
     return this.employeFormGroup.controls;
   }
 addEmployee(){
    this.service.postEmployeDetail().subscribe(res=>{
-       this.resetForm(this.employeFormGroup)
+       this.resetForm(this.employeFormGroup.value)
        this.service.refreshList();
    },err=>{console.log(err);})
+  // console.log(res);
 }
 }
 
 
 
 
-// this.httpService.post('https://localhost:44385/api/Employees', JSON.stringify({
-//     employeName:this.employeFormGroup.value
-  
-//   })).subscribe(  
-//     data => {  
-//      this.employeee = data as  [];  
-//     }  
-//   ); 
-//   if(this.employeFormGroup.value != null){
-//    // alert("successfully added employe");
-//     console.log(this.employeee);
-//     console.log(this.employeFormGroup.value);
-//   }
- 

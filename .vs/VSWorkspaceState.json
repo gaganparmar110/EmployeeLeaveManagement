@@ -1,13 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EmployeLeave-portal",
     "\\EmployeLeave-portal\\src",
     "\\EmployeLeave-portal\\src\\app",
     "\\EmployeLeave-portal\\src\\app\\LeaveList\\leave-list",
     "\\LeaveManagementSystem\\Controllers",
     "\\LeaveManagementSystem\\Models"
   ],
-  "SelectedNode": "\\EmployeLeave-portal\\src\\app\\LeaveList",
+  "SelectedNode": "\\EmployeLeave-portal",
   "PreviewInSolutionExplorer": false
 }

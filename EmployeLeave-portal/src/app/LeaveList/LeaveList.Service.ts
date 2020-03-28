@@ -1,4 +1,5 @@
 import { LeaveList } from '../Employee.model';
+import {Employee} from '../Employee.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
@@ -9,6 +10,7 @@ export class LeaveListService {
   formData: LeaveList;
   readonly rootURL = 'https://localhost:44385/api';
   list : LeaveList[];
+  listName:Employee[];
 
   constructor(private http: HttpClient) { }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gagan\\source\\repos\\office-work\\LeaveManagementSystem\\LeaveManagementSystem.csproj": {}
+    "C:\\Users\\Gagan\\source\\repos\\EmployeeLeaveManagement\\LeaveManagementSystem\\LeaveManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gagan\\source\\repos\\office-work\\LeaveManagementSystem\\LeaveManagementSystem.csproj": {
+    "C:\\Users\\Gagan\\source\\repos\\EmployeeLeaveManagement\\LeaveManagementSystem\\LeaveManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gagan\\source\\repos\\office-work\\LeaveManagementSystem\\LeaveManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Gagan\\source\\repos\\EmployeeLeaveManagement\\LeaveManagementSystem\\LeaveManagementSystem.csproj",
         "projectName": "LeaveManagementSystem",
-        "projectPath": "C:\\Users\\Gagan\\source\\repos\\office-work\\LeaveManagementSystem\\LeaveManagementSystem.csproj",
+        "projectPath": "C:\\Users\\Gagan\\source\\repos\\EmployeeLeaveManagement\\LeaveManagementSystem\\LeaveManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Gagan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gagan\\source\\repos\\office-work\\LeaveManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\Gagan\\source\\repos\\EmployeeLeaveManagement\\LeaveManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gagan\\AppData\\Roaming\\NuGet\\NuGet.Config",

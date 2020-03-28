@@ -13,7 +13,9 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   postEmployeDetail() {
+    //console.log(this.formData);
     return this.http.post(this.rootURL + '/Employees', this.formData);
+    
   }
   putEmployeeDetail() {
    // return this.http.put(this.rootURL + '/EmployeeDetail/'+ this.formData.PMId, this.formData);
@@ -23,7 +25,7 @@ export class EmployeeService {
   }
 
   refreshList(){
-    this.http.get(this.rootURL + '/Employees')
+    this.http.get(this.rootURL + '/Employees')  
     .toPromise()
     .then(res => this.list = res as Employee[]);
   }

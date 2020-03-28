@@ -29,8 +29,8 @@ namespace LeaveManagementSystem
         {
           
 
-    services.AddDbContext<EmployeeContext>(optionns =>
-    optionns.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+    services.AddDbContextPool<EmployeeContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;

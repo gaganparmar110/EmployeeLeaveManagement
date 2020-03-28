@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,8 +11,12 @@ namespace LeaveManagementSystem.Models
     {
         [Key]
         public int EmployeeLeaveId { get; set; }
-       // public string EmployeeName { get; set; }
+
+        [NotMapped]
+        public string EmployeName { get; set; }
+       
         public DateTime LeaveStartDate { get; set; }
+    
         public DateTime LeaveEndDate { get; set; }
         public int EmployeId { get; set; }
     }
