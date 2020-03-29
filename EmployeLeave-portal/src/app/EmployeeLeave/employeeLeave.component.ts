@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 import{FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { EmployeeLeaveService } from './EmployeeLeave.Service';
+
 
 @Component({
   selector: 'app-leave-list',
@@ -13,31 +13,28 @@ import { EmployeeLeaveService } from './EmployeeLeave.Service';
 export class EmployeeLeaveComponent implements OnInit {
     leaveFormGroup:FormGroup;
     leave=[];
-  constructor(private httpService: HttpClient,private formBuilder:FormBuilder,private service:EmployeeLeaveService) { }
+    result:any;
+    readonly rootURL = 'https://localhost:44385/api';
+  constructor(private httpService: HttpClient,private formBuilder:FormBuilder,) { }
 
   
   ngOnInit() {
-    this.resetForm();
+  
       this.leaveFormGroup=this.formBuilder.group({
           employeeName:['',Validators.required],
           leaveStartDate:['',Validators.required],
           leaveEndDate:['',Validators.required]
       })
+  //    console.log(this.leaveFormGroup.value);
 
   }
-  resetForm(leaveFormGroup?:FormGroup){
-    this.service.formData={
-      EmployeeLeaveId:0,
-      LeaveStartDate:"",
-      LeaveEndDate:"",
-      EmployeId:0
-  }
-  }
+ 
   applyLeave(){
-    this.service.postEmployeeLeaves().subscribe(res=>{
-      this.resetForm(this.leaveFormGroup)
-      this.service.refreshList();
-  },err=>{console.log(err);})
+    this.httpService.post(this.rootURL+'/EmployeeLeaves',{EmployeName:this.leaveFormGroup.controls.employeeName.value,LeaveStartDate:this.leaveFormGroup.controls.leaveStartDate.value,LeaveEndDate:this.leaveFormGroup.controls.leaveEndDate.value}).subscribe(res=>{
+      this.result=res;
+      console.log(this.result);
+    })
+  
    
   }
 }

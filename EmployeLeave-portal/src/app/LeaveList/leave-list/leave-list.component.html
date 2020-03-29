@@ -5,10 +5,10 @@
             <div class="col-lg-12">
               <table>
                   <tr><td>EmployeeName </td><td>from date</td><td>to date</td></tr>
-                  <tr  *ngFor="let list of service.list,let nameList of serviceName.nameList" > 
+                   <tr  *ngFor="let list of leaveList " >  
                    
-                      <td>{{nameList.EmployeeName}}</td><td>{{list.LeaveStartDate}}</td><td>{{list.LeaveEndDate}}</td>
-                  </tr>
+                       <td>{{list.EmployeeName}}</td><td>{{list.LeaveStartDate}}</td><td>{{list.LeaveEndDate}}</td> 
+                   </tr> 
               </table>
             </div>
         </div>

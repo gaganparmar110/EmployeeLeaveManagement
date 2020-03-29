@@ -1,4 +1,4 @@
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+
 
 export class Employee{
     EmployeId:number;
@@ -7,9 +7,10 @@ export class Employee{
 
 export class EmployeeLeave{
         EmployeeLeaveId:number;
+        EmployeName:string;
         LeaveStartDate:string;
         LeaveEndDate:string;
-        EmployeId:number;
+       // EmployeId:number;
 
 }
 export class LeaveList{

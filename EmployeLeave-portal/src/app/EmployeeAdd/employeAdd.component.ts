@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 import{FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { EmployeeService } from './Employee.Service';
+
 @Component({
   selector: 'app-add-employee',
   templateUrl: './employeAdd.component.html',
@@ -12,36 +12,32 @@ export class EmployeeAddComponent implements OnInit {
     employeFormGroup:FormGroup;
     employee=[];
     submitted = false;
-  constructor(private httpService: HttpClient,private formBuilder:FormBuilder,private service:EmployeeService) { }
+    result:any;
+    readonly rootURL = 'https://localhost:44385/api';
+  constructor(private httpService: HttpClient,private formBuilder:FormBuilder) { }
 
   
   ngOnInit() {
-    this.resetForm();
+ 
     this.employeFormGroup=this.formBuilder.group({
         employeName:['',Validators.compose([Validators.required,Validators.maxLength(20)])],
     });
     
    
   }
-  resetForm(employeFormGroup?:FormGroup){
-      // if(employeFormGroup != null)
-      // employeFormGroup.reset();
 
-      this.service.formData={
-          EmployeId:0,
-          EmployeName:''
-      }
-      console.log(this.service.formData);
-  }
+
   get registerFormControl() {
+    
     return this.employeFormGroup.controls;
   }
+
 addEmployee(){
-   this.service.postEmployeDetail().subscribe(res=>{
-       this.resetForm(this.employeFormGroup.value)
-       this.service.refreshList();
-   },err=>{console.log(err);})
-  // console.log(res);
+  this.httpService.post(this.rootURL+'/Employees',{employeName:this.employeFormGroup.controls.employeName.value}).subscribe(res=>{
+    this.result=res;
+    console.log(this.result);
+  });
+
 }
 }
 
